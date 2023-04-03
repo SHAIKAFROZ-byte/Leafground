@@ -28,21 +28,19 @@ public class section {
     @FindBy(xpath = "//li[@id='menuform:m_frame']") private  WebElement frame;
 
 
+    public section Action_Dropdown() {
+        Actions act = new Actions(driver);
+        act.moveToElement(Element).click().perform();
+        button.click();
+        return this;
 
-
-
-   public void Action_Dropdown(){
-       Actions act = new Actions(driver);
-       act.moveToElement(Element).click().perform();
-       button.click();
-
-   }
-
-   public  void browser(){
-       Actions act = new Actions(driver);
-       act.moveToElement(browser).click().perform();
-       frame.click();
 
     }
+//   public section browser(){
+//       Actions act = new Actions(driver);
+//       act.moveToElement(browser).click().perform();
+//       frame.click();
+//       return this;
+//    }
 
 }

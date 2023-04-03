@@ -16,15 +16,25 @@ public class tuesday {
     WebDriver driver;
 
 
-    textbox txt; waits wt; section se; buttons bt; iframe ifr;
+    textbox txt; waits wt;  buttons bt; iframe ifr; window w;
+    section se;
 
     @BeforeClass
- public void reason(){
+ public void setup(){
      WebDriverManager.firefoxdriver().setup();
      driver = new FirefoxDriver();
      driver.manage().window().maximize();
      driver.get("https://www.leafground.com/waits.xhtml");
      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+ }
+
+
+ @Test(description = "First", priority = 1)
+ public void checkingMenu(){
+     se= new section(driver);
+     se.Action_Dropdown();
+     bt = new buttons(driver);
+     bt.button().btn_dimensions().btns_color().btns_color().section();
  }
 
  @Test(priority = 1,enabled = false)
@@ -35,32 +45,34 @@ public class tuesday {
 
  }
 
- @Test(priority = 2)
+ @Test(priority = 2,enabled = false)
     public void semiimp(){
         wt= new waits(driver);
-        wt.waiter();
+        wt.element_to_click().Element_visiblity().element_to_click().text_Present();
 
  }
 
- @Test(priority = 3)
+ @Test(priority = 3,enabled = false)
     public void section(){
         se= new section(driver);
         se.Action_Dropdown();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, enabled = false)
     public void button(){
         bt =new buttons(driver);
         bt.button();
-        se = new section(driver);
-        se.browser();
+//        bt.disab();
+       //se = new section(driver);
+       // se.browser();
     }
 
- @Test(priority = 5)
+ @Test(description = "what is this",priority = 5, enabled = false)
  public void browser(){
-      ifr = new iframe(driver);
-      ifr.iframes();
-      ifr.count_fram();
+      w=new window(driver);
+      w.windows();
+      w.windowframe();
+
  }
 
 }

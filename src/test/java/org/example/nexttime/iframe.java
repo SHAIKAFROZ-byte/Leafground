@@ -37,7 +37,7 @@ public class iframe {
     @FindBy(xpath = "//iframe[@id='frame2']") private  WebElement page;
     @FindBy(xpath = "//button[@id ='Click']") private WebElement btn;
 
-    public void iframes() {
+    public iframe iframes() {
         driver.switchTo().frame(iframe_Click);
         button.click();
         System.out.println(button.getText());
@@ -53,6 +53,7 @@ public class iframe {
         driver.switchTo().defaultContent();
         int outerframes = count_frame.size();
         System.out.println("sum of frames: " + (innerframe + outerframes));
+        return this;
     }
       }
 

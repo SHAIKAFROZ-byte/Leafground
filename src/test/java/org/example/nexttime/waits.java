@@ -17,8 +17,8 @@ public class waits {
     WebDriver driver;
 
     public waits(WebDriver driver) {
-       this.driver = driver;
-       PageFactory.initElements(driver,this);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
 
     }
 
@@ -47,30 +47,40 @@ public class waits {
     @FindBy(xpath = "//button[@id='j_idt87:j_idt99']")
     private WebElement fourth_wait2;
 
-public void waiter(){
-    //visiblity of Element
+    public waits element_to_click() {
+        //visiblity of Element
 
-    first_wait1.click();
-    Wait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-    wait.until(ExpectedConditions.elementToBeClickable(first_wait2));
-    first_wait2.click();
+        first_wait1.click();
+        Wait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(first_wait2));
+        first_wait2.click();
+        return  this;
+    }
 
-   //invisibilty of Element
-    second_wait1.click();
-    wait.until(ExpectedConditions.invisibilityOf(second_wait2));
+    public waits Element_visiblity() {
+        //invisibilty of Element
+        Wait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        second_wait1.click();
+        wait.until(ExpectedConditions.invisibilityOf(second_wait2));
+        return this;
+    }
 
+    public waits Element_Clickbilitu(){
+    Wait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     //element to be clickable
     Third_wait1.click();
     wait.until(ExpectedConditions.elementToBeClickable(Third_wait2));
-
-    //change of text
-    fourth_wait1.click();
-    wait.until(ExpectedConditions.textToBePresentInElement(fourth_wait2,"Did you notice?"));
+    return  this;
+}
 
 
+    public waits text_Present() {
+        //change of text
+        Wait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        fourth_wait1.click();
+        wait.until(ExpectedConditions.textToBePresentInElement(fourth_wait2, "Did you notice?"));
+        return this;
 
-
- }
-
+    }
 
 }

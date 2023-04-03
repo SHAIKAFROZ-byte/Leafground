@@ -27,13 +27,14 @@ public class textbox {
 
 
 
-    public void textboxes(String input1, String input2, String input3){
+    public textbox textboxes(String input1, String input2, String input3){
         firstbox.sendKeys(input1);
         secondbox.sendKeys(input2 );
         disabledbox.isEnabled();
         String ele = retrivetext.getText();
         System.out.println(ele);
         cleartxt.clear();
+        return this;
 
 
     }

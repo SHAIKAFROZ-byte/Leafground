@@ -21,18 +21,19 @@ public class window {
 
     @FindBy(xpath = "//button[@id='j_idt88:new']") private  WebElement firstframe;
 
-    public void windows(){
+    public section windows(){
         Actions act= new Actions(driver);
         act.moveToElement(browser).click().perform();
-       act.moveToElement(windowbutton).click().perform();
+        act.moveToElement(windowbutton).click().perform();
+        return new section(driver);
     }
 
-    public  void windowframe(){
+    public  section windowframe(){
         String parentwindow = driver.getWindowHandle();
         firstframe.click();
         System.out.println(driver.getWindowHandle());
         driver.switchTo().window(parentwindow);
-
+        return new section(driver);
 
     }
 
