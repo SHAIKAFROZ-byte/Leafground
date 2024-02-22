@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 public class leafboard {
 
     WebDriver driver;
-    sections se; button btns;
 
     @BeforeClass
     public void setup(){
