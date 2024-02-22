@@ -22,8 +22,7 @@ public class leafboard {
 
     @Test(priority = 1)
     public void first_time(){
-        se = new sections(driver);
-        se.button();
-        btns.button().disab();
+        System.out.println("Leafground");
+        driver.close();
     }
 }
